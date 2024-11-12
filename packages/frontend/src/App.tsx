@@ -12,7 +12,6 @@ import { AppContext, AppContextType } from "./lib/contextLib";
 function App() {
   const [isAuthenticated, userHasAuthenticated] = useState(false);
   const [isAuthenticating, setIsAuthenticating] = useState(true);
-  const [isLoading, setIsLoading] = useState(false);
   const nav = useNavigate();
 
   useEffect(() => {
