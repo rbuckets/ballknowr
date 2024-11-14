@@ -13,6 +13,10 @@ export default $config({
     await import("./infra/api");
     await import("./infra/web");
     const auth = await import("./infra/auth");
+    new sst.aws.Cron("MyCronJob", {
+      job: "packages/functions/src/cron.handler",
+      schedule: "rate(1 minute)"
+    });
 
     return {
       UserPool: auth.userPool.id,
